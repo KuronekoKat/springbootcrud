@@ -1,3 +1,5 @@
+create schema crud;
+
 CREATE TABLE `proveedores` (
   `id_proveedor` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_proveedor` varchar(45) NOT NULL,
@@ -11,7 +13,7 @@ CREATE TABLE `cliente` (
   `nombre_cliente` varchar(45) NOT NULL,
   `telefono_cliente` varchar(45) NOT NULL,
   `direccion` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_proveedor`)
+  PRIMARY KEY (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `producto` (
