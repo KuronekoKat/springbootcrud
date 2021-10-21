@@ -49,12 +49,8 @@ public class ProveedorController {
 	@PutMapping("/{id}")
 	public ResponseEntity updateProveedor(@PathVariable Integer id, @RequestBody Proveedor proveedor) {
 		System.out.println("Llamada a actualizar proveedor");
-		Proveedor currentProveedor = proveedorRepository.findById(id).orElseThrow(RuntimeException::new);
-		currentProveedor.setNombreProveedor(proveedor.getNombreProveedor());
-		currentProveedor.setTelefonoProveedor(proveedor.getTelefonoProveedor());
-		currentProveedor.setDescripcion(proveedor.getDescripcion());
-		currentProveedor = proveedorRepository.save(proveedor);
-		
+		proveedor.setIdProveedor(id);
+		Proveedor currentProveedor = proveedorRepository.saveAndFlush(proveedor);
 		return ResponseEntity.ok(currentProveedor);
 	}
 	
